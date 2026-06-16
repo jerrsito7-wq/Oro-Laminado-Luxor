@@ -6,32 +6,53 @@
 <title>Oro Laminado Luxor</title>
 
 <style>
-body{
+
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background:#0f2d2d;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0d2323;
 color:white;
-text-align:center;
+line-height:1.6;
 }
 
 header{
-padding:40px 20px;
+text-align:center;
+padding:50px 20px;
+background:linear-gradient(to bottom,#0d2323,#123535);
+}
+
+.logo{
+width:220px;
+max-width:90%;
+margin-bottom:20px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(212,175,55,.4);
 }
 
 h1{
+font-size:3rem;
 color:#d4af37;
-font-size:48px;
 margin-bottom:10px;
 }
 
-h2{
-color:#d4af37;
+.slogan{
+font-size:1.2rem;
+margin-bottom:20px;
 }
 
-section{
-padding:40px 20px;
-max-width:1000px;
+.descripcion{
+max-width:800px;
 margin:auto;
+font-size:18px;
+}
+
+.botones{
+margin-top:30px;
 }
 
 .boton{
@@ -43,93 +64,301 @@ color:black;
 font-weight:bold;
 text-decoration:none;
 border-radius:10px;
+transition:.3s;
 }
 
-.tarjetas{
+.boton:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.titulo{
+text-align:center;
+color:#d4af37;
+margin-bottom:40px;
+font-size:2rem;
+}
+
+.cards{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
 }
 
-.tarjeta{
+.card{
 background:#173d3d;
-padding:20px;
+padding:25px;
 border-radius:15px;
-width:220px;
+width:300px;
+text-align:center;
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.comprar{
+margin-top:15px;
+display:inline-block;
+background:#25D366;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
 }
 
 footer{
 background:#081818;
-padding:30px;
-margin-top:40px;
+text-align:center;
+padding:40px 20px;
+}
+
+footer h2{
+color:#d4af37;
+margin-bottom:20px;
 }
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
+bottom:20px;
 background:#25D366;
 color:white;
 padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 0 15px rgba(0,0,0,.4);
 }
+
+@media(max-width:768px){
+
+h1{
+font-size:2rem;
+}
+
+.card{
+width:100%;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
+<img src="logo.png" alt="Oro Laminado Luxor" class="logo">
+
 <h1>ORO LAMINADO LUXOR</h1>
-<p>Elegancia que Brilla, Calidad que Perdura</p>
 
-<a class="boton" href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct" target="_blank">
-Ver Catálogo
+<p class="slogan">
+💎 Elegancia que Brilla, Calidad que Perdura 💎
+</p>
+
+<p class="descripcion">
+En Oro Laminado Luxor encontrarás una exclusiva colección de cadenas,
+pulseras y dijes en oro laminado. Diseños modernos, acabados premium,
+atención personalizada y envíos a toda Colombia. Nuestro compromiso es
+ofrecer calidad, elegancia y confianza en cada compra.
+</p>
+
+<div class="botones">
+
+<a class="boton"
+href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct"
+target="_blank">
+📂 Ver Catálogo
 </a>
 
-<a class="boton" href="https://wa.me/573188542522" target="_blank">
-Comprar por WhatsApp
+<a class="boton"
+href="https://wa.me/573188542522"
+target="_blank">
+📱 Comprar Ahora
 </a>
+
+</div>
+
 </header>
 
 <section>
-<h2>¿Por qué elegirnos?</h2>
 
-<div class="tarjetas">
-<div class="tarjeta">🚚 Envíos a toda Colombia</div>
-<div class="tarjeta">🛡️ Garantía de calidad</div>
-<div class="tarjeta">💎 Diseños exclusivos</div>
-<div class="tarjeta">📱 Atención personalizada</div>
+<h2 class="titulo">¿Por Qué Elegir Oro Laminado Luxor?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>💎 Calidad Premium</h3>
+<p>
+Productos cuidadosamente seleccionados con acabados elegantes y excelente presentación.
+</p>
 </div>
+
+<div class="card">
+<h3>🛡️ Garantía de Calidad</h3>
+<p>
+Respaldamos nuestros productos para que compres con total confianza.
+</p>
+</div>
+
+<div class="card">
+<h3>🚚 Envíos Nacionales</h3>
+<p>
+Realizamos envíos seguros a toda Colombia.
+</p>
+</div>
+
+</div>
+
 </section>
 
 <section>
-<h2>Productos</h2>
 
-<div class="tarjetas">
-<div class="tarjeta">⛓️ Cadenas</div>
-<div class="tarjeta">✨ Pulseras</div>
-<div class="tarjeta">🦁 Dijes</div>
-</div>
-</section>
+<h2 class="titulo">Nuestros Productos</h2>
 
-<section>
-<h2>Catálogo Completo</h2>
+<div class="cards">
 
-<a class="boton" href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct" target="_blank">
-Ver Catálogo Completo
+<div class="card">
+<h3>⛓️ Cadenas</h3>
+<p>
+Modelos modernos y elegantes para complementar cualquier estilo.
+</p>
+
+<a class="comprar"
+href="https://wa.me/573188542522"
+target="_blank">
+Consultar
 </a>
+</div>
+
+<div class="card">
+<h3>✨ Pulseras</h3>
+<p>
+Diseños exclusivos que resaltan tu personalidad y elegancia.
+</p>
+
+<a class="comprar"
+href="https://wa.me/573188542522"
+target="_blank">
+Consultar
+</a>
+</div>
+
+<div class="card">
+<h3>🦁 Dijes</h3>
+<p>
+Detalles únicos con acabados de lujo y excelente presentación.
+</p>
+
+<a class="comprar"
+href="https://wa.me/573188542522"
+target="_blank">
+Consultar
+</a>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">¿Cómo Comprar?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>1️⃣ Explora</h3>
+<p>Revisa nuestro catálogo completo.</p>
+</div>
+
+<div class="card">
+<h3>2️⃣ Elige</h3>
+<p>Selecciona los productos que más te gusten.</p>
+</div>
+
+<div class="card">
+<h3>3️⃣ Escríbenos</h3>
+<p>Realiza tu pedido por WhatsApp Business.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">Catálogo Completo</h2>
+
+<div style="text-align:center;">
+
+<p style="margin-bottom:20px;">
+Descubre toda nuestra colección de cadenas, pulseras y dijes.
+</p>
+
+<a class="boton"
+href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct"
+target="_blank">
+📂 Ver Catálogo Completo
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">Síguenos en Facebook</h2>
+
+<div style="text-align:center;">
+
+<a class="boton"
+href="https://www.facebook.com/share/1GbgvHtJDb/"
+target="_blank">
+📘 Visitar Facebook
+</a>
+
+</div>
+
 </section>
 
 <footer>
-<h2>Contacto</h2>
-<p>WhatsApp Business: 318 854 2522</p>
-<p>Envíos a toda Colombia</p>
+
+<h2>ORO LAMINADO LUXOR</h2>
+
+<p>
+💎 Calidad • Elegancia • Confianza
+</p>
+
+<br>
+
+<p>
+📱 WhatsApp Business: 318 854 2522
+</p>
+
+<p>
+🚚 Envíos a toda Colombia
+</p>
+
+<p>
+🛡️ Garantía de calidad
+</p>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/573188542522" target="_blank">
+<a class="whatsapp"
+href="https://wa.me/573188542522"
+target="_blank">
 WhatsApp
 </a>
 

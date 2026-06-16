@@ -1,366 +1,170 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oro Laminado Luxor</title>
 
+<!-- Iconos de FontAwesome para el botón flotante de WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
+* { margin: 0px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+body { background: rgb(13, 35, 35); color: white; line-height: 1.6; }
+
+header { text-align: center; padding: 60px 20px; background: linear-gradient(rgb(13, 35, 35), rgb(8, 24, 24)); }
+
+.logo { width: 220px; max-width: 85%; margin-bottom: 20px; border-radius: 20px; border: 2px solid rgb(212, 175, 55); box-shadow: rgba(212, 175, 55, 0.3) 0px 0px 30px; }
+
+h1 { font-size: 2.8rem; color: rgb(212, 175, 55); margin-bottom: 10px; letter-spacing: 2px; font-weight: 700; }
+
+.slogan { font-size: 1.2rem; margin-bottom: 25px; color: #e0e0e0; font-style: italic; }
+
+.descripcion { max-width: 750px; margin: auto; font-size: 17px; color: #cdcdcd; }
+
+.botones { margin-top: 35px; }
+
+.boton { display: inline-block; padding: 15px 35px; margin: 10px; background: linear-gradient(135deg, rgb(212, 175, 55), #b8860b); color: black; font-weight: bold; text-decoration: none; border-radius: 50px; transition: 0.3s; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 15px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+
+.boton:hover { transform: translateY(-3px); box-shadow: rgba(212, 175, 55, 0.4) 0px 6px 20px; }
+
+section { padding: 60px 20px; max-width: 1100px; margin: auto; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+
+.titulo { text-align: center; color: rgb(212, 175, 55); margin-bottom: 40px; font-size: 2.2rem; position: relative; padding-bottom: 10px; }
+
+.titulo::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background-color: rgb(212, 175, 55); }
+
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
+
+.card { background: rgba(23, 61, 61, 0.6); padding: 30px 25px; border-radius: 15px; width: 320px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.1); transition: 0.3s; }
+
+.card:hover { transform: translateY(-5px); border-color: rgb(212, 175, 55); background: rgba(23, 61, 61, 0.9); }
+
+.card h3 { color: rgb(212, 175, 55); margin-bottom: 15px; font-size: 1.4rem; }
+
+.card p { color: #e0e0e0; font-size: 0.95rem; }
+
+.comprar { margin-top: 20px; display: inline-block; background: #25d366; padding: 10px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; font-size: 0.9rem; }
+
+.comprar:hover { background: #20ba5a; transform: scale(1.05); }
+
+/* Sección FAQ */
+.faq-container { max-width: 800px; margin: auto; }
+.faq-item { background: rgba(23, 61, 61, 0.4); margin-bottom: 15px; padding: 20px; border-radius: 10px; border-left: 4px solid rgb(212, 175, 55); }
+.faq-item h4 { color: rgb(212, 175, 55); margin-bottom: 5px; font-size: 1.1rem; }
+.faq-item p { color: #cdcdcd; font-size: 0.95rem; }
+
+footer { background: rgb(6, 18, 18); text-align: center; padding: 50px 20px; color: #cdcdcd; }
+
+footer h2 { color: rgb(212, 175, 55); margin-bottom: 15px; letter-spacing: 1px; }
+
+footer p { margin-bottom: 8px; font-size: 0.95rem; }
+
+/* Botón flotante de WhatsApp */
+.whatsapp-flotante { position: fixed; right: 20px; bottom: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 15px; text-decoration: none; z-index: 1000; transition: 0.3s; }
+
+.whatsapp-flotante:hover { transform: scale(1.1); background: #20ba5a; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  .titulo { font-size: 1.7rem; }
+  .card { width: 100%; }
 }
-
-body{
-background:#0d2323;
-color:white;
-line-height:1.6;
-}
-
-header{
-text-align:center;
-padding:50px 20px;
-background:linear-gradient(to bottom,#0d2323,#123535);
-}
-
-.logo{
-width:220px;
-max-width:90%;
-margin-bottom:20px;
-border-radius:20px;
-box-shadow:0 0 25px rgba(212,175,55,.4);
-}
-
-h1{
-font-size:3rem;
-color:#d4af37;
-margin-bottom:10px;
-}
-
-.slogan{
-font-size:1.2rem;
-margin-bottom:20px;
-}
-
-.descripcion{
-max-width:800px;
-margin:auto;
-font-size:18px;
-}
-
-.botones{
-margin-top:30px;
-}
-
-.boton{
-display:inline-block;
-padding:15px 30px;
-margin:10px;
-background:#d4af37;
-color:black;
-font-weight:bold;
-text-decoration:none;
-border-radius:10px;
-transition:.3s;
-}
-
-.boton:hover{
-transform:scale(1.05);
-}
-
-section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.titulo{
-text-align:center;
-color:#d4af37;
-margin-bottom:40px;
-font-size:2rem;
-}
-
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.card{
-background:#173d3d;
-padding:25px;
-border-radius:15px;
-width:300px;
-text-align:center;
-}
-
-.card h3{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-.comprar{
-margin-top:15px;
-display:inline-block;
-background:#25D366;
-padding:10px 20px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
-
-footer{
-background:#081818;
-text-align:center;
-padding:40px 20px;
-}
-
-footer h2{
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 0 15px rgba(0,0,0,.4);
-}
-
-@media(max-width:768px){
-
-h1{
-font-size:2rem;
-}
-
-.card{
-width:100%;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<img src="logo.png" alt="Oro Laminado Luxor" class="logo">
-
-<h1>ORO LAMINADO LUXOR</h1>
-
-<p class="slogan">
-💎 Elegancia que Brilla, Calidad que Perdura 💎
-</p>
-
-<p class="descripcion">
-En Oro Laminado Luxor encontrarás una exclusiva colección de cadenas,
-pulseras y dijes en oro laminado. Diseños modernos, acabados premium,
-atención personalizada y envíos a toda Colombia. Nuestro compromiso es
-ofrecer calidad, elegancia y confianza en cada compra.
-</p>
-
-<div class="botones">
-
-<a class="boton"
-href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct"
-target="_blank">
-📂 Ver Catálogo
-</a>
-
-<a class="boton"
-href="https://wa.me/573188542522"
-target="_blank">
-📱 Comprar Ahora
-</a>
-
-</div>
-
+    <!-- Tu logo oficial integrado directamente -->
+    <img src="logo.png" alt="Oro Laminado Luxor" class="logo">
+    <h1>ORO LAMINADO LUXOR</h1>
+    <p class="slogan">💎 Elegancia que Brilla, Calidad que Perdura 💎</p>
+    <p class="descripcion">
+        En Oro Laminado Luxor encontrarás una exclusiva colección de cadenas, pulseras y dijes en oro laminado. Diseños modernos, acabados premium, atención personalizada y envíos seguros a toda Colombia. Nuestro compromiso es ofrecer calidad, elegancia y confianza en cada compra.
+    </p>
+    <div class="botones">
+        <a class="boton" href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct" target="_blank">📂 Ver Catálogo</a>
+        <a class="boton" href="https://wa.me/573188542522?text=Hola%20Oro%20Laminado%20Luxor,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20joyas" target="_blank">📱 Comprar Ahora</a>
+    </div>
 </header>
 
 <section>
-
-<h2 class="titulo">¿Por Qué Elegir Oro Laminado Luxor?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>💎 Calidad Premium</h3>
-<p>
-Productos cuidadosamente seleccionados con acabados elegantes y excelente presentación.
-</p>
-</div>
-
-<div class="card">
-<h3>🛡️ Garantía de Calidad</h3>
-<p>
-Respaldamos nuestros productos para que compres con total confianza.
-</p>
-</div>
-
-<div class="card">
-<h3>🚚 Envíos Nacionales</h3>
-<p>
-Realizamos envíos seguros a toda Colombia.
-</p>
-</div>
-
-</div>
-
+    <h2 class="titulo">¿Por Qué Elegirnos?</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>💎 Calidad Premium</h3>
+            <p>Piezas meticulosamente seleccionadas con tres robustas capas de oro para un brillo excepcional y máxima resistencia.</p>
+        </div>
+        <div class="card">
+            <h3>🛡️ Garantía Real</h3>
+            <p>Respaldamos la durabilidad de cada una de nuestras joyas para que realices tus compras con total tranquilidad y respaldo.</p>
+        </div>
+        <div class="card">
+            <h3>🚚 Envíos a toda Colombia</h3>
+            <p>Llevamos la elegancia hasta la puerta de tu casa. Envíos respaldados y seguros a cualquier rincón del país.</p>
+        </div>
+    </div>
 </section>
 
 <section>
-
-<h2 class="titulo">Nuestros Productos</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>⛓️ Cadenas</h3>
-<p>
-Modelos modernos y elegantes para complementar cualquier estilo.
-</p>
-
-<a class="comprar"
-href="https://wa.me/573188542522"
-target="_blank">
-Consultar
-</a>
-</div>
-
-<div class="card">
-<h3>✨ Pulseras</h3>
-<p>
-Diseños exclusivos que resaltan tu personalidad y elegancia.
-</p>
-
-<a class="comprar"
-href="https://wa.me/573188542522"
-target="_blank">
-Consultar
-</a>
-</div>
-
-<div class="card">
-<h3>🦁 Dijes</h3>
-<p>
-Detalles únicos con acabados de lujo y excelente presentación.
-</p>
-
-<a class="comprar"
-href="https://wa.me/573188542522"
-target="_blank">
-Consultar
-</a>
-</div>
-
-</div>
-
+    <h2 class="titulo">Nuestras Categorías</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>⛓️ Cadenas</h3>
+            <p>Modelos clásicos y modernos con tejidos exclusivos para complementar de manera impecable cualquier estilo.</p>
+            <a class="comprar" href="https://wa.me/573188542522?text=Hola,%20me%20gustar%C3%ADa%20consultar%20los%20modelos%20disponibles%20en%20Cadenas" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+        </div>
+        <div class="card">
+            <h3>✨ Pulseras</h3>
+            <p>Diseños sofisticados estructurados para resaltar con distinción tu personalidad y elegancia en toda ocasión.</p>
+            <a class="comprar" href="https://wa.me/573188542522?text=Hola,%20me%20gustar%C3%ADa%20consultar%20los%20modelos%20disponibles%20en%20Pulseras" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+        </div>
+        <div class="card">
+            <h3>🦁 Dijes</h3>
+            <p>Detalles únicos, desde figuras representativas hasta diseños religiosos con acabados de alto lujo.</p>
+            <a class="comprar" href="https://wa.me/573188542522?text=Hola,%20me%20gustar%C3%ADa%20consultar%20los%20modelos%20disponibles%20en%20Dijes" target="_blank"><i class="fab fa-whatsapp"></i> Consultar</a>
+        </div>
+    </div>
 </section>
 
+<!-- Sección FAQ -->
 <section>
-
-<h2 class="titulo">¿Cómo Comprar?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>1️⃣ Explora</h3>
-<p>Revisa nuestro catálogo completo.</p>
-</div>
-
-<div class="card">
-<h3>2️⃣ Elige</h3>
-<p>Selecciona los productos que más te gusten.</p>
-</div>
-
-<div class="card">
-<h3>3️⃣ Escríbenos</h3>
-<p>Realiza tu pedido por WhatsApp Business.</p>
-</div>
-
-</div>
-
+    <h2 class="titulo">Preguntas Frecuentes</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h4>¿Qué es el Oro Laminado 18k?</h4>
+            <p>Es una base de metal de alta calidad sobre la cual se funden tres capas gruesas de oro de 18 quilates, logrando una joya idéntica en apariencia al oro macizo con una resistencia muy superior a la del fantaseo común.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Las joyas cambian de color o se pelan?</h4>
+            <p>Nuestras piezas están fabricadas para resistir el uso diario. No pierden su color con facilidad ni se pelan gracias a su cobertura reforzada. Con los cuidados básicos, mantendrán su brillo por años.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Cómo puedo hacer un pedido?</h4>
+            <p>Es muy sencillo: explora nuestro catálogo digital de Drive, selecciona los diseños que más te gusten y escríbenos directamente por WhatsApp haciendo clic en los botones de esta web para concretar tu despacho.</p>
+        </div>
+    </div>
 </section>
 
-<section>
-
-<h2 class="titulo">Catálogo Completo</h2>
-
-<div style="text-align:center;">
-
-<p style="margin-bottom:20px;">
-Descubre toda nuestra colección de cadenas, pulseras y dijes.
-</p>
-
-<a class="boton"
-href="https://drive.google.com/drive/folders/1JEGMI94cXHe-jEF3WEnOuw01tZ6TGDct"
-target="_blank">
-📂 Ver Catálogo Completo
-</a>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="titulo">Síguenos en Facebook</h2>
-
-<div style="text-align:center;">
-
-<a class="boton"
-href="https://www.facebook.com/share/1GbgvHtJDb/"
-target="_blank">
-📘 Visitar Facebook
-</a>
-
-</div>
-
+<section style="background: rgba(0,0,0,0.15); border-radius: 20px; margin: 40px auto;">
+    <h2 class="titulo">Nuestras Redes Sociales</h2>
+    <div style="text-align:center; padding: 20px 0;">
+        <p style="margin-bottom:20px;">Mantente al día con nuestros nuevos ingresos y promociones exclusivas.</p>
+        <a class="boton" href="https://www.facebook.com/share/1GbgvHtJDb/" target="_blank">📘 Visitar Facebook</a>
+    </div>
 </section>
 
 <footer>
-
-<h2>ORO LAMINADO LUXOR</h2>
-
-<p>
-💎 Calidad • Elegancia • Confianza
-</p>
-
-<br>
-
-<p>
-📱 WhatsApp Business: 318 854 2522
-</p>
-
-<p>
-🚚 Envíos a toda Colombia
-</p>
-
-<p>
-🛡️ Garantía de calidad
-</p>
-
+    <h2>ORO LAMINADO LUXOR</h2>
+    <p>💎 Calidad • Elegancia • Confianza</p>
+    <br>
+    <p><i class="fab fa-whatsapp" style="color: #25d366;"></i> WhatsApp Business: 318 854 2522</p>
+    <p><i class="fas fa-truck" style="color: rgb(212, 175, 55);"></i> Envíos garantizados a toda Colombia</p>
+    <p>© 2026 Oro Laminado Luxor - Todos los derechos reservados.</p>
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/573188542522"
-target="_blank">
-WhatsApp
+<!-- Botón Flotante de WhatsApp -->
+<a class="whatsapp-flotante" href="https://wa.me/573188542522?text=Hola%20Oro%20Laminado%20Luxor,%20ingres%C3%A9%20desde%20su%20p%C3%A1gina%20web%20y%20deseo%20asesor%C3%ADa." target="_blank">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
-</body>
-</html>
+</body></html>
